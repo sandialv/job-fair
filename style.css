@@ -260,3 +260,124 @@ img{max-width:100%;display:block}
 @media (prefers-reduced-motion: reduce){
   *{transition:none !important}
 }
+
+
+:root {
+  --biru: #0072bc;
+  --abu: #6b7280;
+}
+
+/* Container utama */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.section-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: #111827;
+}
+
+/* Grid layout */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 40px;
+}
+
+/* Kartu berita */
+.card {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+}
+
+/* Bagian gambar */
+.thumb {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Judul */
+.judul {
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 16px 16px 4px 16px;
+  line-height: 1.4;
+}
+
+.judul a {
+  color: var(--biru);
+  text-decoration: none;
+}
+
+.judul a:hover {
+  text-decoration: underline;
+}
+
+/* Tanggal */
+.tanggal {
+  font-size: 0.9rem;
+  color: var(--abu);
+  margin: 0 16px 16px 16px;
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+  .grid {
+    gap: 24px;
+  }
+  .thumb {
+    height: 180px;
+  }
+}
+
+@media (max-width: 480px) {
+  .thumb {
+    height: 150px;
+  }
+}
+
+/* ==== Area gambar ==== */
+.card .thumb {
+  width: 100%;
+  height: 200px; /* sebelumnya 160px → diperbesar */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+
+.card .thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* proporsional, tidak terpotong */
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+.card .thumb img:hover {
+  transform: scale(1.08); /* efek zoom lembut */
+}
+
